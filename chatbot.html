@@ -22,10 +22,13 @@
           </>      
         );
       }
+      //destructuring message and sender variables in ChatMessage function parameters
+      function ChatMessage({message,sender}){
+            // const message = props.message
+            // const sender = props.sender
+            //destructuring and shortcutting message and sender variables
+            // const {message, sender} = props;
 
-      function ChatMessage(props){
-            const message = props.message
-            const sender = props.sender
 
           if (sender === 'robot'){
             return(

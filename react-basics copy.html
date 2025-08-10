@@ -24,25 +24,42 @@
             <p>This is a paragraph {2 + 2}.</p>
         </div>
       );
-      const productCost = 10 * 1 + 8 + 8;
-      const shippingCost = 5;
-      console.log(productCost);
-      const currentDate = dayjs().format('MMMM D, YYYY');
-      console.log(currentDate);
-      const divCopy = (
-        <div>
-            <h2>Today's date: {currentDate}</h2>
-            <p>Cotton socks</p>
-            <p>Price ${5+5}</p>
-            <button>Add to Cart</button>
-            <p>Product cost: ${productCost}</p>
-            <p>Shipping cost: ${shippingCost}</p>
-            <p>Total cost: ${productCost + shippingCost}</p>
-            <button>Add to Cart</button>
-        </div>
+      const paragraph = (
+        <p>
+          Current time: {dayjs().format('HH:mm:ss')}
+        </p>
       );
+      // const productCost = 10 * 1 + 8 + 8;
+      // const shippingCost = 5;
+      // console.log(productCost);
+      // const currentDate = dayjs().format('MMMM D, YYYY');
+      // console.log(currentDate);
+      // const currentTime = dayjs().format('HH:mm:ss');
+      // console.log(currentTime);
+      // const divCopy = (
+      //   <div>
+      //       <h2>Today's date: {currentDate}</h2>
+      //       <p>Current time: {currentTime}</p>
+      //       <p>Cotton socks</p>
+      //       <p>Price ${5+5}</p>
+      //       <button>Add to Cart</button>
+      //       <p>Product cost: ${productCost}</p>
+      //       <p>Shipping cost: ${shippingCost}</p>
+      //       <p>Total cost: ${productCost + shippingCost}</p>
+      //       <button>Add to Cart</button>
+      //   </div>
+      // );
       const container = document.querySelector('.js-container');
-      ReactDOM.createRoot(container).render(<div>{div}{divCopy}</div>);
+      const root = ReactDOM.createRoot(container);
+      root.render(paragraph);
+
+      setInterval(() => {
+        const paragraph = <p>
+            Current time: {dayjs().format('HH:mm:ss')}
+          </p>
+        
+        root.render(paragraph);
+      }, 1000);
     </script>
   </body>
 </html>

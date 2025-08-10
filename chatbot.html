@@ -21,10 +21,12 @@
         );
       }
 
-      function ChatMessage(){
+      function ChatMessage(props){
+            const message = props.message
+
           return (
             <div>
-            hello chatbot
+            {message}
             <img src="user.png" width="50"/>
             </div>
           );
@@ -33,7 +35,10 @@
       const app = (
         <>
           <ChatInput/>
-          <ChatMessage/>
+          <ChatMessage message="hello chatbot"/>
+          <ChatMessage message="Hello! How can I help you?"/>
+          <ChatMessage message="can you get me today's date?"/>
+          <ChatMessage message="Today is August 10"/>
        </>
       );
       const container = document.querySelector('.js-container');
